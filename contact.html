@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系 · 我的博客网站</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"> <span>我的博客网站</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html"> 首页</a></li>
+                <li><a href="blog.html"> 文章</a></li>
+                <li><a href="portfolio.html"> 项目</a></li>
+                <li><a href="about.html"> 关于</a></li>
+                <li><a href="contact.html" class="active"> 留言</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>联系我</h1>
+            <p>有任何问题或想法，欢迎留言</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>保持联系</h2>
+                    <p>无论是技术交流、合作意向，还是对文章内容的建议，我都乐于倾听。</p>
+
+                    <div class="contact-item">
+                        <div>
+                            <h4>邮箱</h4>
+                            <span>hi@frontend-notes.dev</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <h4>GitHub</h4>
+                            <span>github.com/frontend-notes</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <h4>Twitter / X</h4>
+                            <span>@frontend_notes</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <h4>微信</h4>
+                            <span>frontend-notes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" placeholder="你的名字" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">主题</label>
+                        <input type="text" id="subject" placeholder="想聊点什么？">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言</label>
+                        <textarea id="message" placeholder="写下你想说的话..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">发送留言</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+</html>

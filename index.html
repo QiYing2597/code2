@@ -1,11 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>我的博客网站· 首页</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    111
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"> <span>我的博客网站</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active"> 首页</a></li>
+                <li><a href="blog.html"> 文章</a></li>
+                <li><a href="portfolio.html"> 项目</a></li>
+                <li><a href="about.html"> 关于</a></li>
+                <li><a href="contact.html"> 留言</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide">
+                    <div class="slide-bg" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);"></div>
+                    <div class="carousel-overlay">
+                        <span class="sub-label"> 热门推荐</span>
+                        <h2>从零开始学 JavaScript</h2>
+                        <p>原型、闭包、异步——掌握前端的核心语言，<br>一套课程打通 JS 全栈</p>
+                        <span class="cta-btn">立即学习 →</span>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-bg" style="background:linear-gradient(135deg,#4a0e4e,#6b1d5e,#883e6e);"></div>
+                    <div class="carousel-overlay">
+                        <span class="sub-label"> 实战指南</span>
+                        <h2>CSS 现代布局</h2>
+                        <p>Flexbox、Grid、容器查询——<br>从此告别传统布局方式</p>
+                        <span class="cta-btn">查看详情 →</span>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-bg" style="background:linear-gradient(135deg,#0a2a44,#0d3b66,#1a6e8e);"></div>
+                    <div class="carousel-overlay">
+                        <span class="sub-label"> 新技术</span>
+                        <h2>React 19 新特性</h2>
+                        <p>Server Components、Actions、新 Hooks<br>全面解析 React 下一代演进方向</p>
+                        <span class="cta-btn">了解详情 →</span>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-bg" style="background:linear-gradient(135deg,#2d1b4e,#4a2d6e,#5f3d8e);"></div>
+                    <div class="carousel-overlay">
+                        <span class="sub-label"> 移动优先</span>
+                        <h2>响应式设计实战</h2>
+                        <p>从移动端到桌面端，<br>打造完美的跨屏用户体验</p>
+                        <span class="cta-btn">马上学习 →</span>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev"><i class="arrow"></i></button>
+            <button class="carousel-btn next"><i class="arrow"></i></button>
+            <div class="carousel-dots">
+                <button class="dot active"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">最新文章</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <img class="card-img" src="img/h1.png" alt="React">
+                    <div class="card-body">
+                        <span class="card-tag">React</span>
+                        <h3>React Server Components 完全指南</h3>
+                        <p>从概念到实践，深入理解 RSC 的渲染机制、数据获取方式以及在 Next.js App Router 中的最佳实践。</p>
+                        <div class="card-meta">2024-12-10 · 12 min read</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="img/h2.png" alt="CSS">
+                    <div class="card-body">
+                        <span class="card-tag">CSS</span>
+                        <h3>CSS Container Queries 实战手册</h3>
+                        <p>容器查询彻底改变了组件级响应式设计的实现方式，本文带你掌握全部核心用法。</p>
+                        <div class="card-meta">2024-12-05 · 8 min read</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="img/h3.png" alt="Vite">
+                    <div class="card-body">
+                        <span class="card-tag">构建</span>
+                        <h3>Vite 6 配置深度解析</h3>
+                        <p>分析 Vite 6 的核心配置项、常用插件集成以及如何针对不同项目场景定制构建流程。</p>
+                        <div class="card-meta">2024-11-28 · 10 min read</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="img/h4.png" alt="TypeScript">
+                    <div class="card-body">
+                        <span class="card-tag">TypeScript</span>
+                        <h3>TypeScript 高级类型模式</h3>
+                        <p>条件类型、infer 关键字、模板字面量类型——用真实案例拆解 TS 类型体操的核心技巧。</p>
+                        <div class="card-meta">2024-11-20 · 15 min read</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="img/h5.png" alt="HTTP/3">
+                    <div class="card-body">
+                        <span class="card-tag">性能</span>
+                        <h3>HTTP/3 与 Web 性能优化</h3>
+                        <p>QUIC 协议如何减少连接延迟，以及前端开发者如何利用 HTTP/3 特性提升用户体验。</p>
+                        <div class="card-meta">2024-11-15 · 7 min read</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="img/h6.png" alt="测试">
+                    <div class="card-body">
+                        <span class="card-tag">测试</span>
+                        <h3>前端测试金字塔实战</h3>
+                        <p>从 Vitest 单元测试到 Playwright E2E，搭建一个可维护的前端测试体系。</p>
+                        <div class="card-meta">2024-11-10 · 9 min read</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2>博客笔记</h2>
+                    <p>一个专注于前端技术分享的个人博客。记录学习笔记，分享实战经验。</p>
+                </div>
+            </div>
+            <div class="footer-col">
+               &copy; 2026 QiYing Project.<br/>
+               <a href="https://qiying2597.github.io/code2/" style="color: #888;text-decoration: none;">GitHub云服务器:https://qiying2597.github.io/code2/</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

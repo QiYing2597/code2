@@ -1,0 +1,810 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== Type ===== */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: #111;
+}
+
+/* ===== Nav ===== */
+header {
+    border-bottom: 1px solid #e8e8e8;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #fdfcfb 0%, #f8f3ed 100%);
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #c00;
+    padding: 0 16px 0 0;
+    border-right: 1px solid rgba(0,0,0,0.06);
+}
+
+.logo span {
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+    padding-left: 16px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    background: linear-gradient(135deg, #fef3e2, #fdebd0);
+    color: #c00;
+}
+
+.nav-links a.active {
+    color: #c00;
+    background: linear-gradient(135deg, #fdebd0, #fce4c8);
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: #c00;
+    border-radius: 2px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 6px;
+}
+
+.hamburger span {
+    width: 20px;
+    height: 2px;
+    background: #333;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+
+/* ===== Carousel ===== */
+.carousel-section {
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-slide .slide-bg {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
+
+.carousel-overlay {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-align: left;
+    max-width: 500px;
+}
+
+.carousel-overlay .sub-label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+.carousel-overlay h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.carousel-overlay p {
+    font-size: 16px;
+    opacity: 0.85;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.carousel-overlay .cta-btn {
+    display: inline-block;
+    padding: 10px 32px;
+    background: #fff;
+    color: #111;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.carousel-overlay .cta-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 64px;
+    background: rgba(0,0,0,0.15);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s;
+    opacity: 0;
+}
+
+.carousel-container:hover .carousel-btn {
+    opacity: 1;
+}
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.45);
+}
+
+.carousel-btn .arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.carousel-btn.prev { left: 0; border-radius: 0 2px 2px 0; }
+.carousel-btn.next { right: 0; border-radius: 2px 0 0 2px; }
+
+.carousel-btn.prev .arrow {
+    border-width: 10px 12px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    margin-left: -4px;
+}
+
+.carousel-btn.next .arrow {
+    border-width: 10px 0 10px 12px;
+    border-color: transparent transparent transparent #fff;
+    margin-right: -4px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 18px;
+    right: 30px;
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: 2px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #fff;
+    border-color: #fff;
+    transform: scale(1.15);
+}
+
+.dot:hover {
+    background: rgba(255,255,255,0.8);
+}
+
+/* ===== Section ===== */
+.section {
+    padding: 56px 0;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    letter-spacing: -0.3px;
+}
+
+/* ===== Cards ===== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #f0f0f0;
+    border-radius: 0;
+    transition: all 0.2s;
+}
+
+.card:hover {
+    border-color: #ccc;
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.card-body h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.card-body p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.card-meta {
+    font-size: 12px;
+    color: #aaa;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ===== Banner ===== */
+.page-banner {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 40px;
+}
+
+.page-banner h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.page-banner p {
+    font-size: 14px;
+    color: #888;
+}
+
+/* ===== Blog List ===== */
+.blog-list { display: grid; gap: 20px; }
+
+.blog-post {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    border: 1px solid #f0f0f0;
+    transition: border-color 0.2s;
+}
+
+.blog-post:hover { border-color: #ccc; }
+
+.blog-post .post-img {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-post-body {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blog-post-body .card-tag { margin-bottom: 6px; }
+
+.blog-post-body h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.blog-post-body > p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.blog-post-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* ===== Portfolio ===== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item {
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.portfolio-item:hover { border-color: #ccc; }
+
+.portfolio-item .pf-bg {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-overlay {
+    padding: 16px 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.portfolio-overlay h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.portfolio-overlay p {
+    font-size: 12px;
+    color: #999;
+}
+
+/* ===== About ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #f0f0f0;
+}
+
+.about-text h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.about-text p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
+
+.skill-item {
+    margin-bottom: 12px;
+}
+
+.skill-item .skill-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.skill-item .bar {
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.skill-item .fill {
+    height: 100%;
+    border-radius: 2px;
+    background: #333;
+}
+
+/* ===== Contact ===== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.contact-info h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.contact-info > p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.contact-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.contact-item .icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.contact-item h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 1px;
+}
+
+.contact-item span {
+    font-size: 13px;
+    color: #888;
+}
+
+.contact-form {
+    border: 1px solid #f0f0f0;
+    padding: 28px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #eee;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #333;
+    background: #fff;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    letter-spacing: 0.3px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* ===== Footer ===== */
+footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 40px 0 24px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 32px;
+    margin-bottom: 24px;
+}
+
+.footer-col h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.8;
+}
+
+.footer-col ul li {
+    margin-bottom: 6px;
+}
+
+.footer-col ul li a {
+    font-size: 13px;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: #000;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #bbb;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .blog-post {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-post .post-img {
+        min-height: 140px;
+    }
+
+    .blog-post-body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #fdfcfb, #f8f3ed);
+        flex-direction: column;
+        padding: 8px 12px;
+        border-bottom: 1px solid #e8e8e8;
+        gap: 2px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 14px;
+        font-size: 14px;
+        border-radius: 6px;
+        border-bottom: none;
+    }
+
+    .nav-links a.active::after {
+        display: none;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .carousel-slide .slide-bg {
+        height: 240px;
+        font-size: 36px;
+    }
+
+    .carousel-overlay {
+        left: 24px;
+        max-width: 70%;
+    }
+
+    .carousel-overlay .sub-label {
+        font-size: 11px;
+        padding: 3px 10px;
+        margin-bottom: 8px;
+    }
+
+    .carousel-overlay h2 {
+        font-size: 20px;
+        letter-spacing: -0.5px;
+    }
+
+    .carousel-overlay p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .carousel-overlay p br {
+        display: none;
+    }
+
+    .carousel-overlay .cta-btn {
+        padding: 7px 20px;
+        font-size: 12px;
+    }
+
+    .carousel-dots {
+        bottom: 10px;
+        right: 16px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 48px;
+    }
+
+    .carousel-btn.prev .arrow {
+        border-width: 7px 9px 7px 0;
+    }
+
+    .carousel-btn.next .arrow {
+        border-width: 7px 0 7px 9px;
+    }
+
+    .cards-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 36px 0;
+    }
+
+    .page-banner {
+        padding: 32px 0 24px;
+        margin-bottom: 28px;
+    }
+
+    .page-banner h1 {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于.我的博客网站</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"> <span>我的博客网站</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html"> 首页</a></li>
+                <li><a href="blog.html"> 文章</a></li>
+                <li><a href="portfolio.html"> 项目</a></li>
+                <li><a href="about.html" class="active"> 关于</a></li>
+                <li><a href="contact.html"> 留言</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>关于</h1>
+            <p>关于我 and 这个博客的创建思路</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="about-grid">
+                
+                <img class="about-img" src="img/tx.jpg" alt="关于我">
+                <div class="about-text">
+                    <h2>你好，我是一名前端web开发专业的学生</h2>
+                    <p>
+                        从 2024 年开始接触前端开发，从最初的 HTML/CSS 到如今的 React、TypeScript、
+                        构建工具链，领悟到了 Web 技术的飞速发展。
+                    </p>
+                    <p>
+                        这个博客是我记录学习笔记、分享实战经验的地方。每一篇文章都力求清晰、实用，
+                        希望能帮助到走在相同道路上的开发者。
+                    </p>
+                    <p>
+                        我相信，最好的学习方式是分享。如果你有任何问题或建议，欢迎通过联系页面
+                        与我交流。
+                    </p>
+
+                    <h3>网站构建逻辑</h3>
+                    <p>概述<br>本博客是一个纯静态前端网站，基于 HTML5 + CSS3 + JavaScript 构建， 部署在 GitHub 上。</p>
+
+
+                    <h3 style="font-size:15px;font-weight:600;margin:28px 0 16px;">技术栈</h3>
+                    <div class="skill-item">
+                        <div class="skill-name"><span>HTML5</span><span>90%</span></div>
+                        <div class="bar"><div class="fill" style="width:92%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span>css3</span><span>80%</span></div>
+                        <div class="bar"><div class="fill" style="width:88%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span>JavaScript</span><span>75%</span></div>
+                        <div class="bar"><div class="fill" style="width:85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name"><span>GitHub Pages</span><span>70%</span></div>
+                        <div class="bar"><div class="fill" style="width:75%"></div></div>
+                    </div>
+                    <ul>
+                        <li>HTML5——构建网页结构</li>
+                        <li>css3——flex布局，渐变，响应式设计</li>
+                        <li>JavaScript——轮播图逻辑，原生DOM操作</li>
+                        <li>GitHub Pages——免费静态托管</li>
+                    </ul>
+                    <h3>页面结构</h3>
+                    <p>由导航栏，轮播图，卡片网络的多个结构组成</p>
+                    <h4>导航栏</h4>
+                    <p>导航栏由5个链接构成，并分别指向博客的每个模块。当点击某个模块时会跳转到相应模块</p>
+                    <h4>轮播图</h4>
+                    <p>通过css来实现对图片的滑动效果，并且能通过鼠标点击来实现滑动</p>
+                    <h4>设计思路</h4>
+                    <p>通过我的构思，并且运用ai技术使得页面设计得简洁明了，色调温和不刺眼，运用响应式设计使布局自动适配。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/main.js"></script>
+</body>
+</html>
